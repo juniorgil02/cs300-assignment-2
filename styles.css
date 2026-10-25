@@ -300,3 +300,11 @@ h2 {
         padding-block: 5rem;
     }
 }
+
+
+/* Accessibility: make keyboard focus easy to see */
+a:focus-visible {
+  outline: 3px solid #f4b942;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
