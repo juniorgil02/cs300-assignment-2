@@ -1,0 +1,302 @@
+/* Write your own styles here. */
+/* Community Workshop — mobile-first styles */
+
+/* 1. Basic reset */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #1e293b;
+    background-color: #ffffff;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: #1456a0;
+}
+
+a:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 4px;
+}
+
+.container {
+    width: min(100% - 2rem, 1100px);
+    margin-inline: auto;
+}
+
+.section-padding {
+    padding-block: 4rem;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: clamp(2.3rem, 8vw, 4rem);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    line-height: 1.2;
+}
+
+.eyebrow {
+    color: #1456a0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+/* Navigation */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem 1rem;
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+.site-name {
+    color: #123b68;
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 0.35rem 0;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-links a:hover,
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #eaf3ff, #ffffff);
+    padding: 5rem 1rem;
+    border-top: 1px solid #dbeafe;
+    border-bottom: 1px solid #dbeafe;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+.hero h1 {
+    max-width: 700px;
+    color: #123b68;
+    margin-bottom: 1.25rem;
+}
+
+.hero-content > p:not(.eyebrow) {
+    max-width: 620px;
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 1.75rem;
+}
+
+.button {
+    display: inline-block;
+    background-color: #1456a0;
+    color: #ffffff;
+    padding: 0.85rem 1.3rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #0e3d73;
+}
+/* Sessions and cards */
+.sessions {
+    background-color: #f8fafc;
+}
+
+.section-intro {
+    max-width: 600px;
+    color: #475569;
+    margin-bottom: 2rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.session-card {
+    background-color: #ffffff;
+    border: 1px solid #dbeafe;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 14px rgba(18, 59, 104, 0.06);
+}
+
+.card-number {
+    color: #1456a0;
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.session-card h3 {
+    color: #123b68;
+    margin-bottom: 0.75rem;
+}
+
+.session-card p {
+    color: #475569;
+}
+
+.session-card a {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.session-card a:hover {
+    text-decoration: underline;
+}
+/* About section */
+.about {
+    background-color: #ffffff;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-text {
+    width: 100%;
+}
+
+.about-text h2 {
+    color: #123b68;
+}
+
+.about-text p:not(.eyebrow) {
+    color: #475569;
+}
+
+.about-image {
+    width: 100%;
+    background-color: #eaf3ff;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+}
+/* Footer */
+.footer {
+    background-color: #123b68;
+    color: #ffffff;
+    padding: 3rem 1rem 1.5rem;
+}
+
+.footer h2 {
+    font-size: 1.5rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-links a {
+    color: #ffffff;
+}
+
+.copyright {
+    border-top: 1px solid #7894b5;
+    padding-top: 1rem;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+/* Tablet layout: two columns when cards have enough room */
+@media (min-width: 600px) {
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
+/* Desktop layout: three cards and side-by-side About content */
+@media (min-width: 960px) {
+    .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .about-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .about-text,
+    .about-image {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .section-padding {
+        padding-block: 5rem;
+    }
+}
